@@ -1,0 +1,78 @@
+/* 
+---------------------------------
+    : KAAZDW
+---------------------------------
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+/*
+font-family: 'Comfortaa', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+:root{
+    --color-body: #111;
+    --color-element01: #444;
+    --color-blue: rgb(55, 91, 146);
+}
+*{
+    margin: 0;
+    padding: 0;
+    a {
+        text-decoration: none;
+    }
+    ul{
+        list-style: none;
+    }
+}
+body{
+    background-color: var(--color-body);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    main{
+        // background-color: var(--color-blue);
+        background-color: rgba(255, 255, 255, 0.023);
+        height: 500px;
+        width: 1000px;
+        margin: 50px auto;
+        border-radius: 5px;
+        text-align: center;
+        div.stats{
+            background-color: var(--color-body  );
+            margin: 5px auto;
+            width: 80%;
+            padding: 5px 20px;
+            border-radius: 5px;
+        }
+        section.container{
+            width: 60%;
+            margin: auto;
+            div#textcontent{
+                width: 100%;
+                margin: auto;
+                margin-top: 45px;
+                margin-bottom: 25px;
+                text-align: left;
+            }
+            textarea#textinput{
+                margin: auto;
+                resize: none;
+                width: 100%;
+                background-color: var(--color-body);
+                color: white;
+                padding: 5px;
+            }
+        }
+        button{
+            padding: 8px 15px;
+            border-radius: 5px;
+            background-color: var(--color-blue);
+            color: white;
+            font-weight: 700;
+            font-size: 15px;
+            margin-top: 15px;
+            letter-spacing: 1px;
+            border: 1px solid white;
+        }
+    }
+}

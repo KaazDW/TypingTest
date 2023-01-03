@@ -27,24 +27,33 @@ font-family: 'Roboto', sans-serif;
 }
 
 body {
-  background-color: var(--color-body);
+  background-color: rgb(25, 27, 33);
   color: white;
   font-family: "Poppins", sans-serif;
 }
 body main {
-  background-color: rgba(255, 255, 255, 0.023);
+  background-color: rgb(39, 38, 49);
   height: 500px;
   width: 1000px;
   margin: 50px auto;
-  border-radius: 5px;
+  border-radius: 7px;
   text-align: center;
 }
+body main h1 {
+  padding-top: 25px;
+}
 body main div.stats {
-  background-color: var(--color-body);
+  background-color: rgba(103, 103, 103, 0.156);
   margin: 5px auto;
+  margin-top: 25px;
   width: 80%;
   padding: 5px 20px;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+body main div.stats p {
+  margin: 10px;
 }
 body main section.container {
   width: 60%;
@@ -57,12 +66,14 @@ body main section.container div#textcontent {
   margin-bottom: 25px;
   text-align: left;
 }
+body main section.container div#textcontent p#quote {
+  font-weight: 600;
+}
 body main section.container textarea#textinput {
   margin: auto;
   resize: none;
   width: 100%;
-  background-color: var(--color-body);
-  color: white;
+  color: black;
   padding: 5px;
 }
 body main button {

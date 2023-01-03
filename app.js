@@ -1,10 +1,13 @@
-const ApiUrl = "https://api.quotable.io/random?minLength=80&maxLength=100";
+const ApiUrl = "https://api.quotable.io/random?minLength=80&maxLength=100"
 
-const word = document.getElementById("textcontent");
-const input = document.getElementById("textinput");
+const word = document.getElementById("textcontent")
+const input = document.getElementById("textinput")
+const finaldiv = document.getElementById("finalResult")
 
-var displaytime = document.getElementById("statstime");
-var displayerror = document.getElementById("statstime");
+finaldiv.style.display = 'none'
+
+var displaytime = document.getElementById("statstime")
+var displayerror = document.getElementById("statstime")
 
 let startingLenght = 0
 var timerStart = false
@@ -19,8 +22,8 @@ var timerStart = false
 // }
 
 const textContentRender = async () => {
-    const response = await fetch(ApiUrl);
-    let data = await response.json();
+    const response = await fetch(ApiUrl)
+    let data = await response.json()
 
     var table = data.content.split(" ").map((value) => {
         startingLenght++;
@@ -35,15 +38,15 @@ const textContentRender = async () => {
         return "<span id='chars-unit"+n+"'>" + value + "</span>"
     });
 
-    document.getElementById('quote').innerHTML += arr.join(" ");
+    document.getElementById('quote').innerHTML += arr.join(" ")
 
     startingLenght = startingLenght /2
     let actualLenght = startingLenght
-    console.log('lenght :', startingLenght, 'words in the sentence' );
+    console.log('lenght :', startingLenght, 'words in the sentence' )
 
     document.getElementById('remaining').innerHTML = actualLenght
 
-    var index = 0;
+    var index = 0
     console.log('word to type :', table[index])
     console.log('actualLenght', actualLenght)
     console.log(actualLenght > 0)        
@@ -56,21 +59,28 @@ const textContentRender = async () => {
     var count = 0
     var RecTime 
     var rightword = 0
+    var falseword = 0
+    var colored = true;
+
+    document.getElementById('chars-unit'+(index)).style.color = 'rgb(55, 91, 146)'
+
+ 
     document.addEventListener('keyup', event => {
         if (event.code === 'Space') {
             // console.log('Space pressed')
+
             if(timerStart === false){
                 RecTime = setInterval(function(){
                     count += 1
                     console.log(count)
                     document.getElementById('statstime').innerHTML = count
                 }, 1000);
-                timerStart = true;
+                timerStart = true
             }
 
             console.log(actualLenght)        
             if(actualLenght > 0){
-                var word = input.value;
+                var word = input.value
                 var word = word.replace(' ','')
                 input.value = ""
 
@@ -79,18 +89,24 @@ const textContentRender = async () => {
                 }
                 
                 // console.log('typeof :', typeof table[index] + ' || ' + 'typeof', typeof word)
-                console.log('word.value :', word, 'index :', index, '> :', table[index])
-                console.log(word === table[index])
-                console.log(word, ' || ', table[index])
-                console.log(`${word.length} || ${table[index].length}`);
+                // console.log('word.value :', word, 'index :', index, '> :', table[index])
+                // console.log(word === table[index])
+                // console.log(word, ' || ', table[index])
+                // console.log(`${word.length} || ${table[index].length}`)
 
                 if(word === table[index]){
-                    console.log('right input >', 'chars-unit'+index)
-                    document.getElementById('chars-unit'+index).style.color = 'green' 
                     rightword++
+                    // console.log('right input >', 'chars-unit'+index)
+                    if(actualLenght !== 0){
+                        document.getElementById('chars-unit'+index).style.color = 'white'
+                    }
                 } else{
-                    console.log('false input')
-                    document.getElementById('chars-unit'+index).style.color = 'red'
+                    falseword++
+                    // console.log('false input')
+                    if(actualLenght !== 0){
+                        document.getElementById('chars-unit'+index).style.color = 'rgb(255, 138, 138)'
+                        document.getElementById('statserror').innerHTML = falseword;
+                    }
                 }
 
                 actualLenght--
@@ -102,18 +118,23 @@ const textContentRender = async () => {
                     index++
                 }
 
-            if(actualLenght === 0){
-                var duration = count
-                console.log( 'duration', duration)
-                console.log('rightword', rightword)
-                console.log('word', startingLenght)
-                clearInterval(RecTime);
-                input.style.display = 'none'
+                if(actualLenght === 0){
+                    var duration = count
+                    clearInterval(RecTime)
+                    input.style.display = 'none'
+                    colored = false;
+                    console.log( 'duration', duration)
+                    console.log('rightword', rightword)
+                    console.log('word', startingLenght)
+
+                    finaldiv.style.display = 'block'
+                }else{
+                    document.getElementById('chars-unit'+(index)).style.color = 'rgb(55, 91, 146)' 
                 }
             }
         }
     })
-}; textContentRender();
+}; textContentRender()
 
 
 

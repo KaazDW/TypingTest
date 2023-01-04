@@ -11,9 +11,9 @@
 <body>
     <main>
         <h1>k.Typing Test</h1>
-        <div class="stats">
+        <div id="stats">
             <p>Durée : <span id="statstime">0</span>s</p>
-            <p>Erreurs : <span id="statserror">0</span></p>
+            <!-- <p>Erreurs : <span id="statserror">0</span></p> -->
             <!-- <p>Score : <span id="statsscore">0</span> mpm</p> -->
             <p>Restants : <span id="remaining">0</span> mots</p>
         </div>
@@ -23,9 +23,25 @@
 
                 </p><!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aut eveniet, doloremque voluptate rem a quidem molestiae voluptatem unde itaque. -->
             </div>
-            <textarea id="textinput" rows="3" placeholder="Type space after writing the first word to start"></textarea>
+            <input id="textinput" rows="3" placeholder="Type space after writing the first word to start"></input>
             <div id='finalResult'>
-                <p>FINAL RESULT</p>
+                <h2>FINAL RESULT</h2>
+                <div>
+                    
+                    <p class="mpm">Mots par minutes : <span id="wpm"><!--</span><span id="wpmf"></span>--></p>
+                    <ul>
+                        <li>Mots :</li>
+                            <span id="stat-word"></span>
+                        <li>Erreurs :</li>
+                            <span id="statserror"></span>
+                        <li>Correct :</li>
+                            <span id="stat-correct"></span>
+                        <li>Durée :</li>
+                            <span id="stat-duration"></span>
+                    </ul>
+                </div>
+
+
             </div>
         </section>
         <!-- <button>START</button>  -->

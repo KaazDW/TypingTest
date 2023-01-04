@@ -38,15 +38,16 @@ body{
                     // inset -20px -20px 60px #313131;
         background-color: rgb(39, 38, 49);  
         // border: 1px solid white;
-        height: 500px;
-        width: 1000px;
+        height: 450px;
+        min-width: 600px;
+        width: 55vw;
         margin: 50px auto;
         border-radius: 7px;
         text-align: center;
         h1{
             padding-top: 25px;
         }
-        div.stats{
+        div#stats{
             // background-color: var(--color-body  );
             background-color: rgba(103, 103, 103, 0.156);
             margin: 5px auto;
@@ -71,15 +72,81 @@ body{
                 text-align: left;
                 p#quote{
                     font-weight: 600;
+                    font-size: 18px;
                 }
             }
-            textarea#textinput{
+            input#textinput{
                 margin: auto;
                 resize: none;
                 width: 100%;
                 // background-color: var(--color-body);
                 color: black;
                 padding: 5px;
+            }
+            div#finalResult{
+                border-top: 1px solid lightgrey;
+                h2{
+                    margin-top: 20px;
+                }
+                div{
+                    margin: 13px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    p.mpm{
+                        margin: 20px;
+                        span#wpm{
+                            color: rgb(79, 117, 175);
+                            font-size: 25px;
+                            border: 1px solid white;
+                            padding: 5px 10px;
+                            line-height: 75px;
+                            border-radius: 5px;
+                            font-weight: 600;
+                            cursor: default
+                        }
+                        // span#wpmf{
+                        //     position: absolute;
+                        //     margin-top: -30px;
+                        //     margin-left: -75px;
+                        //     background-color: rgba(103, 103, 103, 0.156);
+                        //     backdrop-filter: blur(2px);
+                        //     padding: 5px 10px;
+                        //     border: 3px solid grey;
+                        //     border-radius: 50px;
+                        //     z-index: 3;
+                        //     transition: .2s;
+                        //     opacity: 0;
+                        // }
+                    }
+                    // span#wpm:hover ~ #wpmf{
+                    //     opacity: 1;
+                    // }
+                    ul{
+                        width: 40%;
+                        padding-left: 25px;
+                        margin-left: 25px;
+                        border-left: 1px solid rgb(187, 187, 187);
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        li{
+                            color: lightgrey;
+                            text-align: right;
+                        }
+                        span{
+                            text-align: left;
+
+                            font-size: 17px;
+                            font-weight: 600;
+                            color: white;
+                            margin: 0 15px;
+                        }
+                        // display: block;
+                    }
+                }
+                
+
             }
         }
         button{

@@ -1,4 +1,4 @@
-const ApiUrl = "https://api.quotable.io/random?minLength=80&maxLength=100"
+const ApiUrl = "https://api.quotable.io/random?minLength=100&maxLength=120"
 
 const word = document.getElementById("textcontent")
 const input = document.getElementById("textinput")
@@ -11,6 +11,8 @@ var displayerror = document.getElementById("statstime")
 
 let startingLenght = 0
 var timerStart = false
+var wpmfull = 0
+var wpm = 0
 
 // let RecTime = setInterval({inter}, 1000);
         
@@ -56,13 +58,13 @@ const textContentRender = async () => {
 
         // document.getElementById("tmpp").innerHTML= "start";
     });
-    var count = 0
+    var count = -1
     var RecTime 
     var rightword = 0
     var falseword = 0
     var colored = true;
 
-    document.getElementById('chars-unit'+(index)).style.color = 'rgb(55, 91, 146)'
+    document.getElementById('chars-unit'+(index)).style.color = 'rgb(79, 117, 175)'
 
  
     document.addEventListener('keyup', event => {
@@ -98,7 +100,7 @@ const textContentRender = async () => {
                     rightword++
                     // console.log('right input >', 'chars-unit'+index)
                     if(actualLenght !== 0){
-                        document.getElementById('chars-unit'+index).style.color = 'white'
+                        document.getElementById('chars-unit'+index).style.color = 'rgb(89, 208, 156)'
                     }
                 } else{
                     falseword++
@@ -122,12 +124,25 @@ const textContentRender = async () => {
                     var duration = count
                     clearInterval(RecTime)
                     input.style.display = 'none'
+                    document.getElementById("stats").style.display = 'none'
                     colored = false;
                     console.log( 'duration', duration)
                     console.log('rightword', rightword)
                     console.log('word', startingLenght)
 
+                    wpmfull = (rightword * 60) / duration
+                    wpm = wpmfull.toFixed(3);
+                    
+                    document.getElementById("stat-word").innerHTML = startingLenght
+                    document.getElementById("stat-correct").innerHTML = rightword
+                    document.getElementById("stat-duration").innerHTML = `${duration}'`
+
+
+                    document.getElementById('wpm').innerHTML = wpm
+                    // document.getElementById('wpmf').innerHTML = wpmfull
+
                     finaldiv.style.display = 'block'
+
                 }else{
                     document.getElementById('chars-unit'+(index)).style.color = 'rgb(55, 91, 146)' 
                 }

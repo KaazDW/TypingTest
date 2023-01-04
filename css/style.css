@@ -33,8 +33,9 @@ body {
 }
 body main {
   background-color: rgb(39, 38, 49);
-  height: 500px;
-  width: 1000px;
+  height: 450px;
+  min-width: 600px;
+  width: 55vw;
   margin: 50px auto;
   border-radius: 7px;
   text-align: center;
@@ -42,7 +43,7 @@ body main {
 body main h1 {
   padding-top: 25px;
 }
-body main div.stats {
+body main div#stats {
   background-color: rgba(103, 103, 103, 0.156);
   margin: 5px auto;
   margin-top: 25px;
@@ -52,7 +53,7 @@ body main div.stats {
   display: flex;
   justify-content: center;
 }
-body main div.stats p {
+body main div#stats p {
   margin: 10px;
 }
 body main section.container {
@@ -68,13 +69,58 @@ body main section.container div#textcontent {
 }
 body main section.container div#textcontent p#quote {
   font-weight: 600;
+  font-size: 18px;
 }
-body main section.container textarea#textinput {
+body main section.container input#textinput {
   margin: auto;
   resize: none;
   width: 100%;
   color: black;
   padding: 5px;
+}
+body main section.container div#finalResult {
+  border-top: 1px solid lightgrey;
+}
+body main section.container div#finalResult h2 {
+  margin-top: 20px;
+}
+body main section.container div#finalResult div {
+  margin: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main section.container div#finalResult div p.mpm {
+  margin: 20px;
+}
+body main section.container div#finalResult div p.mpm span#wpm {
+  color: rgb(79, 117, 175);
+  font-size: 25px;
+  border: 1px solid white;
+  padding: 5px 10px;
+  line-height: 75px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: default;
+}
+body main section.container div#finalResult div ul {
+  width: 40%;
+  padding-left: 25px;
+  margin-left: 25px;
+  border-left: 1px solid rgb(187, 187, 187);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+body main section.container div#finalResult div ul li {
+  color: lightgrey;
+  text-align: right;
+}
+body main section.container div#finalResult div ul span {
+  text-align: left;
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  margin: 0 15px;
 }
 body main button {
   padding: 8px 15px;

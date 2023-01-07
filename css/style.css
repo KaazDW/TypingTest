@@ -4,6 +4,7 @@
 ---------------------------------
 */
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&family=Courier+Prime:wght@700&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 /*
 font-family: 'Comfortaa', cursive;
 font-family: 'Poppins', sans-serif;
@@ -68,8 +69,10 @@ body main section.container div#textcontent {
   text-align: left;
 }
 body main section.container div#textcontent p#quote {
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.6px;
   font-size: 18px;
+  font-family: "Roboto";
 }
 body main section.container input#textinput {
   margin: auto;
@@ -102,6 +105,7 @@ body main section.container div#finalResult div p.mpm span#wpm {
   border-radius: 5px;
   font-weight: 600;
   cursor: default;
+  margin-left: 5px;
 }
 body main section.container div#finalResult div ul {
   width: 40%;

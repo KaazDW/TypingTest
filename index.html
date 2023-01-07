@@ -5,17 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TypingTest</title>
-    <link href="css/style.css" rel="stylesheet">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link href="css/style2.css" rel="stylesheet">
 
 </head>
-<body>
+<style e>
+
+</style>
+<body onclick="closeAbout()">
     <main>
-        <h1>k.Typing Test</h1>
+        <h2 contenteditable="true">k.Typing Test</h2>
         <div id="stats">
-            <p>Durée : <span id="statstime">0</span>s</p>
-            <!-- <p>Erreurs : <span id="statserror">0</span></p> -->
-            <!-- <p>Score : <span id="statsscore">0</span> mpm</p> -->
-            <p>Restants : <span id="remaining">0</span> mots</p>
+            <!-- <div>
+                <a href="">⚙️</a>
+                <a href="">💻</a>
+            </div> -->
+            <div>
+                <p><span class="title">Durée : </span><span id="statstime">0</span>'</p>
+                <!-- <p>Erreurs : <span id="statserror">0</span></p> -->
+                <!-- <p>Score : <span id="statsscore">0</span> mpm</p> -->
+                <p><span class="title">Restants : </span><span id="remaining">0</span> mots</p>
+            </div>
+
         </div>
         <section class="container">
             <div id="textcontent">
@@ -23,29 +34,29 @@
 
                 </p><!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aut eveniet, doloremque voluptate rem a quidem molestiae voluptatem unde itaque. -->
             </div>
-            <input id="textinput" rows="3" placeholder="Type space after writing the first word to start"></input>
+            <input id="textinput" autocomplete="off" placeholder="Type space after writing the first word to start"></input>
             <div id='finalResult'>
                 <h2>FINAL RESULT</h2>
                 <div>
-                    
-                    <p class="mpm">Mots par minutes : <span id="wpm"><!--</span><span id="wpmf"></span>--></p>
+                    <p class="wpm">< Mots par minutes : <span id="wpm">15</span> /></p>
                     <ul>
-                        <li>Mots :</li>
-                            <span id="stat-word"></span>
-                        <li>Erreurs :</li>
-                            <span id="statserror"></span>
-                        <li>Correct :</li>
-                            <span id="stat-correct"></span>
-                        <li>Durée :</li>
-                            <span id="stat-duration"></span>
+                            <p>< <span id="stat-word">15</span></p>
+                        <li>Mots /></li>
+                            <p>< <span id="statserror">15</span></p>
+                        <li>Erreurs /></li>
+                            <p>< <span id="stat-correct">15</span></p>
+                        <li>Correct /></li>
+                            <p>< <span id="stat-duration">15</span></p>   
+                        <li>Durée /></li>
                     </ul>
+
                 </div>
-
-
             </div>
         </section>
-        <!-- <button>START</button>  -->
-        <p id="tmpp"></p>
+        <p class="about"><a onclick="openAbout()">A propos</a></p>
+        <section id="about">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore cumque amet aspernatur autem eveniet error ipsum deleniti reiciendis. Fugit, vel architecto magni quas doloremque ipsam deserunt, ducimus accusantium, culpa atque praesentium. Modi provident ipsam vitae a, laboriosam illo quas ab, facilis dicta unde inventore, atque quo commodi aliquid aspernatur explicabo!</p>
+        </section>
     </main>
     <script src="app.js"></script>
 </body>

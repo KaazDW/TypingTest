@@ -1,4 +1,3 @@
-document.getElementById('about').style.display = 'none';
 
 const word = document.getElementById("textcontent")
 
@@ -149,14 +148,41 @@ document.addEventListener('keyup', event => {
     }
 })
 
-function openAbout(){
-    console.log("startdqkfsdjfnksndf")
-    document.getElementById('about').style.display = "block"
+document.getElementById('about').style.display = "none"
+
+// function openAbout(){
+//     document.getElementById('about').style.display = "block"
+//     console.log("startdqkfsdjfnksndf")
+// }
+document.getElementById('content').style.display = 'none';
+var x = document.getElementById('about');
+
+function showAbout(){
+    if (x.style.display == 'none') {
+        x.style.display = 'block'
+        document.getElementById('about').style.animation = 'OpenAbout .3s';
+        setTimeout(() => {
+            document.getElementById('content').style.display = 'block';
+            document.getElementById('content').style.animation = 'openContent 1s';
+          }, 600)
+    } else {
+        closeAbout()
+    }
 }
 function closeAbout(){
-    document.getElementById('about').style.display = "none"
+    document.getElementById('content').style.animation = 'closeContent .6s';
+    setTimeout(() => {
+        document.getElementById('content').style.display = 'none';
+        setTimeout(() => {
+            document.getElementById('about').style.animation = 'CloseAbout .3s';
+            setTimeout(() => {
+                    x.style.display = 'none';
+            }, 300)
+        }, 300)
+      }, 500)
 }
-
-
-
-
+function link(){
+    setTimeout(() => {
+        window.open("https://stackoverflow.com/", "_blank");
+    }, 1100)
+}

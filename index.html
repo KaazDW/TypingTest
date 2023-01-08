@@ -12,7 +12,7 @@
 <style e>
 
 </style>
-<body onclick="closeAbout()">
+<body>
     <main>
         <h2 contenteditable="true">k.Typing Test</h2>
         <div id="stats">
@@ -53,9 +53,17 @@
                 </div>
             </div>
         </section>
-        <p class="about"><a onclick="openAbout()">A propos</a></p>
-        <section id="about">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore cumque amet aspernatur autem eveniet error ipsum deleniti reiciendis. Fugit, vel architecto magni quas doloremque ipsam deserunt, ducimus accusantium, culpa atque praesentium. Modi provident ipsam vitae a, laboriosam illo quas ab, facilis dicta unde inventore, atque quo commodi aliquid aspernatur explicabo!</p>
+        <p class="about"><a onclick="showAbout()">A propos</a></p>
+        <section id="about" onclick="showAbout()">
+            <div id="content">
+                <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam omnis velit adipisci ad explicabo assumenda tempora excepturi sint? Ducimus, sunt.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam omnis velit adipisci ad explicabo assumenda tempora excepturi sint? Ducimus, sunt.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam omnis velit adipisci ad explicabo assumenda tempora excepturi sint? Ducimus, sunt.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam omnis velit adipisci ad explicabo assumenda tempora excepturi sint? Ducimus, sunt.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam omnis velit adipisci ad explicabo assumenda tempora excepturi sint? Ducimus, sunt.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam omnis velit adipisci ad explicabo assumenda tempora excepturi sint? Ducimus, sunt.</p> -->
+                <a onclick="link()">test</a>
+            </div>
         </section>
     </main>
     <script src="app.js"></script>

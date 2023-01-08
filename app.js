@@ -179,7 +179,7 @@ function closeAbout(){
                     x.style.display = 'none';
             }, 300)
         }, 300)
-      }, 500)
+    }, 500)
 }
 function link(){
     setTimeout(() => {

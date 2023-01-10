@@ -3,17 +3,18 @@
     : KAAZDW
 ---------------------------------
 */
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&family=Courier+Prime:wght@700&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&family=Syncopate:wght@400;700&display=swap");
 /*
-font-family: 'Comfortaa', cursive;
-font-family: 'Poppins', sans-serif;
-font-family: 'Roboto', sans-serif;
+font-family: 'IBM Plex Mono', monospace;
+font-family: 'Syncopate', sans-serif;
 */
 :root {
-  --color-body: #111;
+  --color-body: rgb(21, 22, 26);
+  --color-bodybis: rgba(21, 22, 26, 0.692);
   --color-element01: #444;
-  --color-blue: rgb(55, 91, 146);
+  --color-blue: rgb(79, 117, 175);
+  --color-green: rgb(89, 208, 156);
+  --color-red: rgb(255, 138, 138);
 }
 
 * {
@@ -28,114 +29,153 @@ font-family: 'Roboto', sans-serif;
 }
 
 body {
-  background-color: rgb(25, 27, 33);
+  background-color: var(--color-body);
   color: white;
-  font-family: "Poppins", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-size: 19px;
 }
 body main {
-  background-color: rgb(39, 38, 49);
-  height: 450px;
-  min-width: 600px;
-  width: 55vw;
-  margin: 50px auto;
-  border-radius: 7px;
-  text-align: center;
+  width: 60vw;
+  margin: auto;
+  border-radius: 4px;
+  padding: 15px;
+  padding-top: 100px;
 }
-body main h1 {
-  padding-top: 25px;
+body main h2 {
+  margin: 10px 0;
 }
 body main div#stats {
-  background-color: rgba(103, 103, 103, 0.156);
-  margin: 5px auto;
-  margin-top: 25px;
-  width: 80%;
-  padding: 5px 20px;
-  border-radius: 5px;
+  margin-bottom: 15px;
   display: flex;
-  justify-content: center;
 }
-body main div#stats p {
-  margin: 10px;
+body main div#stats div:nth-child(1) a {
+  margin-left: 0 5px;
+  font-size: 31px;
 }
-body main section.container {
-  width: 60%;
-  margin: auto;
+body main div#stats div:nth-child(1) {
+  border-left: 1px solid grey;
+  padding-left: 15px;
 }
-body main section.container div#textcontent {
-  width: 100%;
-  margin: auto;
-  margin-top: 45px;
-  margin-bottom: 25px;
-  text-align: left;
+body main div#stats div:nth-child(1) p {
+  color: lightgrey;
+}
+body main div#stats div:nth-child(1) p span.title {
+  color: grey;
 }
 body main section.container div#textcontent p#quote {
-  font-weight: 700;
-  letter-spacing: 0.6px;
-  font-size: 18px;
-  font-family: "Roboto";
+  font-size: 21px;
 }
 body main section.container input#textinput {
-  margin: auto;
-  resize: none;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 8px;
   width: 100%;
-  color: black;
-  padding: 5px;
+  margin-top: 15px;
+  font-size: 19px;
+  font-family: "IBM Plex Mono", monospace;
+  color: white;
+}
+body main section.container input#textinput:focus {
+  outline: none;
+  border-bottom: 1px solid white;
 }
 body main section.container div#finalResult {
-  border-top: 1px solid lightgrey;
-}
-body main section.container div#finalResult h2 {
-  margin-top: 20px;
+  margin-top: 25px;
 }
 body main section.container div#finalResult div {
-  margin: 13px;
+  margin-top: 35px;
   display: flex;
-  justify-content: center;
+  width: 100%;
+  justify-content: space-around;
   align-items: center;
 }
-body main section.container div#finalResult div p.mpm {
-  margin: 20px;
-}
-body main section.container div#finalResult div p.mpm span#wpm {
-  color: rgb(79, 117, 175);
+body main section.container div#finalResult div p.wpm span#wpm {
+  border: 3px solid var(--color-blue);
+  padding: 15px;
   font-size: 25px;
-  border: 1px solid white;
-  padding: 5px 10px;
-  line-height: 75px;
   border-radius: 5px;
-  font-weight: 600;
-  cursor: default;
-  margin-left: 5px;
 }
 body main section.container div#finalResult div ul {
-  width: 40%;
-  padding-left: 25px;
-  margin-left: 25px;
-  border-left: 1px solid rgb(187, 187, 187);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
 }
-body main section.container div#finalResult div ul li {
-  color: lightgrey;
+body main section.container div#finalResult div ul p {
   text-align: right;
 }
-body main section.container div#finalResult div ul span {
-  text-align: left;
-  font-size: 17px;
-  font-weight: 600;
-  color: white;
-  margin: 0 15px;
+body main section.container div#finalResult div ul p span {
+  margin-right: 15px;
 }
-body main button {
-  padding: 8px 15px;
-  border-radius: 5px;
-  background-color: var(--color-blue);
-  color: white;
-  font-weight: 700;
-  font-size: 15px;
-  margin-top: 15px;
-  letter-spacing: 1px;
+body main section.container div#finalResult div ul span#stat-correct {
+  color: var(--color-green);
+}
+body main section.container div#finalResult div ul span#statserror {
+  color: var(--color-red);
+}
+body main section.container div#finalResult div ul span#stat-duration {
+  color: var(--color-blue);
+}
+body main p.about {
+  text-align: right;
+  margin-top: 10px;
+  color: grey;
+  user-select: none;
+  cursor: pointer;
+}
+body main p.about a {
+  color: grey;
+}
+body main section#about {
+  user-select: none;
+  height: 80vh;
+  width: 80vw;
+  position: absolute;
+  background-color: var(--color-body);
   border: 1px solid white;
+  backdrop-filter: blur(20px);
+  top: 8vh;
+  left: 150px;
+  padding: 20px;
+  border-radius: 5px;
 }
 
-/*# sourceMappingURL=style.css.map */
+@keyframes OpenAbout {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+@keyframes CloseAbout {
+  from {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+@keyframes openContent {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes closeContent {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=style2.css.map */

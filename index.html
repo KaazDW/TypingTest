@@ -5,13 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TypingTest</title>
-    <link href="css/style.css" rel="stylesheet">
-    <!-- <link href="css/style2.css" rel="stylesheet"> -->
-
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
-<style e>
-
-</style>
 <body>
     <main>
         <h2 contenteditable="true">k.Typing Test</h2>
@@ -25,6 +20,7 @@
                 <!-- <p>Erreurs : <span id="statserror">0</span></p> -->
                 <!-- <p>Score : <span id="statsscore">0</span> mpm</p> -->
                 <p><span class="title">Restants : </span><span id="remaining">0</span> mots</p>
+                <!-- <p><span class="title">Language : </span><span>French</span></p> -->
             </div>
 
         </div>
@@ -34,9 +30,10 @@
 
                 </p><!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aut eveniet, doloremque voluptate rem a quidem molestiae voluptatem unde itaque. -->
             </div>
-            <div>
-                <a>R</>
+            <div id="field">
+                <img onclick="callreload()"src="assets/reset.png">
                 <input id="textinput" autocomplete="off" placeholder="Type space after writing the first word to start"></input>
+
             </div>
             <div id='finalResult'>
                 <h2>FINAL RESULT</h2>
@@ -55,29 +52,16 @@
                 </div>
             </div>
         </section>
-        <p class="about"><a onclick="showAbout()">Home</a></p> <!--last named 'about'-->
+        <p class="about"><a onclick="showAbout()">Home</a></p>
         <section id="about">
             <div id="content">
+                <h1>k.Typing-Test</h1>
+                <p>Made by <a href="https://github.com/KaazDW" target="_blank">KaazDW</a> in  Vanilla Javascript</p>
                 <div>
-                    <h1>k.Typing-Test</h1>
-                    <p>Made by <a href="">KaazDW</a> in  Vanilla Javascript</p>
-                    <div>
-                        <a class="startingbutton" onclick="showAbout()">Start</a>
-    
-                    </div>
+                    <a class="startingbutton" onclick="showAbout()">Go typing ▶️</a>
+                    <a class="link" href="https://github.com/KaazDW/k.TypingTest" target="_blank"><img src="assets/git.png"></a>
+                    <a class="link" href="https://discord.com/users/258587080970600458" target="_blank"><img src="assets/discord.png"></a>
                 </div>
-                <div>
-                    
-                </div>
-
-
-                <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam omnis velit adipisci ad explicabo assumenda tempora excepturi sint? Ducimus, sunt.</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam omnis velit adipisci ad explicabo assumenda tempora excepturi sint? Ducimus, sunt.</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam omnis velit adipisci ad explicabo assumenda tempora excepturi sint? Ducimus, sunt.</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam omnis velit adipisci ad explicabo assumenda tempora excepturi sint? Ducimus, sunt.</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam omnis velit adipisci ad explicabo assumenda tempora excepturi sint? Ducimus, sunt.</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam omnis velit adipisci ad explicabo assumenda tempora excepturi sint? Ducimus, sunt.</p> -->
-                <!-- <a onclick="link()">test</a> -->
             </div>
         </section>
     </main>

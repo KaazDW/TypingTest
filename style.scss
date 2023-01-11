@@ -35,7 +35,6 @@ body{
     font-weight: 500;
     font-size: 19px;
     main{
-        // border: 1px solid grey;
         width: 50vw;
         margin: auto;
         border-radius: 4px;
@@ -47,17 +46,13 @@ body{
         div#stats{
             margin-bottom: 15px;
             display: flex;
-            // justify-content: space-between;
             div:nth-child(1){
                 a{
-                    // background-color: green;
-                    // border: 1px solid white;
                     margin-left: 0 5px; 
                     font-size: 31px;
                 }
             }
             div:nth-child(1){
-                // margin-left: 15px;
                 border-left: 1px solid grey;
                 padding-left: 15px;
                 p{
@@ -73,25 +68,39 @@ body{
             div#textcontent{
                 p#quote{
                     font-size: 21px;
-                    // span{
-                    //     border: 1px solid white;
-                    // }
                 }
             }
-            input#textinput{
-                background-color: rgba(255, 255, 255, 0);
-                border: none;
-                border-bottom: 1px solid white;
-                padding: 8px;
-                width: 100%;
+            div#field{
+                display: flex;
+                align-items: center;
                 margin-top: 15px;
-                font-size: 19px;
-                font-family: 'IBM Plex Mono', monospace;
-                color: white;
-            }
-            input#textinput:focus{
-                outline: none;
-                border-bottom: 1px solid white;
+                width: 100%;
+                img{
+                    padding: 5px;
+                    border-radius: 5px;
+                    background-color: var(--color-blue);
+                    height: 30px;
+                    transition: .2s;
+                    margin-right: 30px;
+                }
+                img:hover{
+                    cursor: pointer;
+                    background-color: rgb(51, 86, 139);
+                }
+                input#textinput{
+                    background-color: rgba(146, 13, 13, 0);
+                    border: none;
+                    border-bottom: 1px solid white;
+                    padding: 8px;
+                    width: 90%;
+                    font-size: 19px;
+                    font-family: 'IBM Plex Mono', monospace;
+                    color: white;
+                }
+                input#textinput:focus{
+                    outline: none;
+                    border-bottom: 1px solid white;
+                }
             }
             div#finalResult{
                 margin-top: 25px;
@@ -102,7 +111,6 @@ body{
                     justify-content: space-around;
                     align-items: center;
                     p.wpm{
-                        // margin-right: 150px;
                         span#wpm{
                             border: 3px solid var(--color-blue);
                             // background-color: var(--color-blue);
@@ -121,10 +129,6 @@ body{
                                 margin-right: 15px;
                             }
                         }
-                        li{
-                            // text-align: right;
-                        }
-
                         span#stat-correct{
                             color: var(--color-green);
                         }
@@ -153,58 +157,62 @@ body{
             height: 99vh;
             width: 99vw;
             position: absolute;
-            // background-color: rgba(97, 97, 97, 0.466);
             background-color: var(--color-body);
-            border-top: 1px solid white;
-            // border-bottom: 1px solid white;
-            // border: 1px solid white;
             backdrop-filter: blur(20px);
             top: 0vh;
             left: 0.5vw;
-            // padding: 20px;
             border-radius: 3px;
-
-            // animation: OpenAbout .3s;
-            // div#content{
-            //     animation: openContent 1s;
-            //     animation-delay: .3s;
-            // }
             div#content{
                 font-weight: 300;
                 padding-top: 200px;
                 padding-left: 50px;
-                div:nth-child(1){
-                    h1{
-                        -webkit-text-stroke: 1px white;
-                        // -webkit-text-stroke: 1px var(--color-blue);
-                        color: rgba(255, 255, 255, 0);
-                        font-family: 'Syncopate', sans-serif;
-                        font-size: 80px;
+                h1{
+                    -webkit-text-stroke: 1px white;
+                    // -webkit-text-stroke: 1px var(--color-blue);
+                    color: rgba(255, 255, 255, 0);
+                    font-family: 'Syncopate', sans-serif;
+                    font-size: 80px;
+                }
+                p {
+                    color: grey;
+                    a{
+                    color: white;
+                    border-bottom: 1px solid var(--color-blue);
+                    color: var(--color-blue)
                     }
-                    p {
-                        color: grey;
-                        a{
-                        color: white;
-                        border-bottom: 1px solid var(--color-blue);
-                        color: var(--color-blue)
-                        }
+                }
+                div{
+                    margin-top: 90px;
+                    display: flex;
+                    align-items: center;
+                    a{
+                        background-color: var(--color-blue);
+                        border-radius: 5px;
+                        // border: 1px solid white;
+                        transition: .2s;
                     }
-                    div{
-                        margin-top: 90px;
-                        a.startingbutton{
-                            background-color: var(--color-blue);
-                            padding: 8px 12px;
-                            // line-height: 90px;
-                            border-radius: 5px;
+                    a:hover{
+                        background-color: rgb(51, 86, 139);
+                        cursor: pointer;
+                    }
+                    a.startingbutton{
+                        padding: 12px 15px;
+                        // line-height: 90px;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                        font-size: 22px;
+                    }
+                    a.link{
+                        display: flex;
+                        align-items: center;
+                        margin-left: 10px;
+                        padding: 7px;
+                        img{
+                            height: 40px;
                         }
                     }
                 }
-                div:nth-child(2){
-                    
-                }
-
-                
-               
             }
         }
     }
@@ -212,23 +220,22 @@ body{
 
 @keyframes OpenAbout {
     from {
-        transform: scaleY(0);
+        // transform: scaleY(0);
         opacity: 0;
     }
     to{
         opacity: 1;
-        transform: scaleY(1);
-
+        // transform: scaleY(1);
     }
 }
 @keyframes CloseAbout {
     from {
-        transform: scaleY(1);
+        // transform: scaleY(1);
         opacity: 1;
     }
     to{
         opacity: 0;
-        transform: scaleY(0);
+        // transform: scaleY(0);
     }
 }
 @keyframes openContent {

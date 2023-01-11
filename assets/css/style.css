@@ -66,18 +66,35 @@ body main div#stats div:nth-child(1) p span.title {
 body main section.container div#textcontent p#quote {
   font-size: 21px;
 }
-body main section.container input#textinput {
-  background-color: rgba(255, 255, 255, 0);
+body main section.container div#field {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  width: 100%;
+}
+body main section.container div#field img {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--color-blue);
+  height: 30px;
+  transition: 0.2s;
+  margin-right: 30px;
+}
+body main section.container div#field img:hover {
+  cursor: pointer;
+  background-color: rgb(51, 86, 139);
+}
+body main section.container div#field input#textinput {
+  background-color: rgba(146, 13, 13, 0);
   border: none;
   border-bottom: 1px solid white;
   padding: 8px;
-  width: 100%;
-  margin-top: 15px;
+  width: 90%;
   font-size: 19px;
   font-family: "IBM Plex Mono", monospace;
   color: white;
 }
-body main section.container input#textinput:focus {
+body main section.container div#field input#textinput:focus {
   outline: none;
   border-bottom: 1px solid white;
 }
@@ -133,7 +150,6 @@ body main section#about {
   width: 99vw;
   position: absolute;
   background-color: var(--color-body);
-  border-top: 1px solid white;
   backdrop-filter: blur(20px);
   top: 0vh;
   left: 0.5vw;
@@ -144,46 +160,65 @@ body main section#about div#content {
   padding-top: 200px;
   padding-left: 50px;
 }
-body main section#about div#content div:nth-child(1) h1 {
+body main section#about div#content h1 {
   -webkit-text-stroke: 1px white;
   color: rgba(255, 255, 255, 0);
   font-family: "Syncopate", sans-serif;
   font-size: 80px;
 }
-body main section#about div#content div:nth-child(1) p {
+body main section#about div#content p {
   color: grey;
 }
-body main section#about div#content div:nth-child(1) p a {
+body main section#about div#content p a {
   color: white;
   border-bottom: 1px solid var(--color-blue);
   color: var(--color-blue);
 }
-body main section#about div#content div:nth-child(1) div {
+body main section#about div#content div {
   margin-top: 90px;
+  display: flex;
+  align-items: center;
 }
-body main section#about div#content div:nth-child(1) div a.startingbutton {
+body main section#about div#content div a {
   background-color: var(--color-blue);
-  padding: 8px 12px;
   border-radius: 5px;
+  transition: 0.2s;
 }
+body main section#about div#content div a:hover {
+  background-color: rgb(51, 86, 139);
+  cursor: pointer;
+}
+body main section#about div#content div a.startingbutton {
+  padding: 12px 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 22px;
+}
+body main section#about div#content div a.link {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  padding: 7px;
+}
+body main section#about div#content div a.link img {
+  height: 40px;
+}
+
 @keyframes OpenAbout {
   from {
-    transform: scaleY(0);
     opacity: 0;
   }
   to {
     opacity: 1;
-    transform: scaleY(1);
   }
 }
 @keyframes CloseAbout {
   from {
-    transform: scaleY(1);
     opacity: 1;
   }
   to {
     opacity: 0;
-    transform: scaleY(0);
   }
 }
 @keyframes openContent {

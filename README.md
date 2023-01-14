@@ -1,7 +1,7 @@
 <div align=center>
 
-  | **NAME** | **STARTING DATE** | **LANGUAGES** | **LINK** |
+  | **NAME** | **BUILDING DATE** | **LANGUAGES** | **LINK** |
   |:--------:|:-----------------:|:-------------:|:--------:|
-  |*k.TypingTest*|*end 2022*|*HTML, SCSS, JS*|*Not Host atm*|
+  |*k.TypingTest*|*end 2022 - Jan 2023*|*HTML, SCSS, JS*|*Not Host atm*|
 
 </div>

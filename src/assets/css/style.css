@@ -31,16 +31,13 @@
 }
 
 body {
-  background-color: var(--color-black);
   font-family: var(--font-content);
-  color: var(--color-white);
 }
 body header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: var(--color-primary);
 }
 
 /*# sourceMappingURL=style.css.map */

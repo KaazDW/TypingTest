@@ -32,16 +32,16 @@
 }
 
 body {
-  background-color: var(--color-black);
+  //background-color: var(--color-black);
   font-family: var(--font-content);
-  color: var(--color-white);
+  //color: var(--color-white);
 
   header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: var(--color-primary);
+    //background-color: var(--color-primary);
     .button{
 
     }

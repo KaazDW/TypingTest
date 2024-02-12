@@ -16,7 +16,7 @@ var index
 var timerStart
 var wpmfull
 var wpm
-var count
+var count 
 var rightword
 var falseword
 var colored
@@ -80,10 +80,10 @@ function reload(nword){
 
     // console.log('word to type :', table[index])
     console.log('actualLenght', actualLenght)
-    console.log(actualLenght > 0)
+    console.log(actualLenght > 0)        
 
     // var timer = 0
-    // input.addEventListener('input', () => {
+    // input.addEventListener('input', () => { 
 
     //     // document.getElementById("tmpp").innerHTML= "start";
     // });
@@ -91,131 +91,131 @@ function reload(nword){
 
     document.getElementById('chars-unit'+(index)).style.color = 'rgb(79, 117, 175)'
 }
-document.addEventListener('keyup', event => {
-    if (event.code === 'Space' || event.code === 'Enter') {
-        // console.log('Space pressed')
-        if(timerStart === false){
-            RecTime = setInterval(function(){
-                count += 1
-                // console.log(count)
-                document.getElementById('statstime').innerHTML = count/100
-            }, 10);
-            timerStart = true
-        }
-
-        console.log(actualLenght)
-        if(actualLenght > 0){
-            var word = input.value
-            var word = word.replace(' ','')
-            input.value = ""
-
-            if(word === "" || input.value === " "){
-                return 0
+    document.addEventListener('keyup', event => {
+        if (event.code === 'Space' || event.code === 'Enter') {
+            // console.log('Space pressed')
+            if(timerStart === false){
+                RecTime = setInterval(function(){
+                    count += 1
+                    // console.log(count)
+                    document.getElementById('statstime').innerHTML = count/100
+                }, 10);
+                timerStart = true
             }
 
-            if(word === tablelog[index]){
-                rightword++
-                // console.log('right input >', 'chars-unit'+index)
-                if(actualLenght !== 0){
-                    document.getElementById('chars-unit'+index).style.color = 'rgb(89, 208, 156)'
+            console.log(actualLenght)        
+            if(actualLenght > 0){
+                var word = input.value
+                var word = word.replace(' ','')
+                input.value = ""
+
+                if(word === "" || input.value === " "){
+                    return 0
                 }
-            } else{
-                falseword++
-                // console.log('false input')
-                if(actualLenght !== 0){
-                    document.getElementById('chars-unit'+index).style.color = 'rgb(255, 138, 138)'
 
+                if(word === tablelog[index]){
+                    rightword++
+                    // console.log('right input >', 'chars-unit'+index)
+                    if(actualLenght !== 0){
+                        document.getElementById('chars-unit'+index).style.color = 'rgb(89, 208, 156)'
+                    }
+                } else{
+                    falseword++
+                    // console.log('false input')
+                    if(actualLenght !== 0){
+                        document.getElementById('chars-unit'+index).style.color = 'rgb(255, 138, 138)'
+
+                    }
+                }
+
+                actualLenght--
+                console.log('remaining words :', actualLenght)  
+                document.getElementById('remaining').innerHTML = actualLenght
+
+                if(word !== " "){
+                    index++
+                }
+
+                if(actualLenght === 0){
+                    var duration = count/100
+                    clearInterval(RecTime)
+                    Rectime = undefined
+                    field.style.display = 'none'
+                    document.getElementById("stats").style.display = 'none'
+                    colored = false;
+                    console.log( 'duration', duration)
+                    console.log('rightword', rightword)
+                    console.log('word', startingLenght)
+
+                    wpmfull = (rightword * 60) / duration
+                    wpm = wpmfull.toFixed(3);
+                    
+                    document.getElementById("stat-word").innerHTML = startingLenght
+                    document.getElementById("stat-correct").innerHTML = rightword
+                    document.getElementById("stat-duration").innerHTML = `${duration}'`
+
+                    if(falseword == 0)
+                        document.getElementById('statserror').innerHTML = 'PERFECT !!';
+                    else 
+                        document.getElementById('statserror').innerHTML = falseword;
+
+                        
+                    // document.getElementById('wpmf').innerHTML = wpmfull
+                    document.getElementById('wpm').innerHTML = wpm
+                    finaldiv.style.display = 'block'
+
+                }else{
+                    document.getElementById('chars-unit'+(index)).style.color = 'rgb(55, 91, 146)' 
                 }
             }
-
-            actualLenght--
-            console.log('remaining words :', actualLenght)
-            document.getElementById('remaining').innerHTML = actualLenght
-
-            if(word !== " "){
-                index++
-            }
-
-            if(actualLenght === 0){
-                var duration = count/100
-                clearInterval(RecTime)
-                Rectime = undefined
-                field.style.display = 'none'
-                document.getElementById("stats").style.display = 'none'
-                colored = false;
-                console.log( 'duration', duration)
-                console.log('rightword', rightword)
-                console.log('word', startingLenght)
-
-                wpmfull = (rightword * 60) / duration
-                wpm = wpmfull.toFixed(3);
-
-                document.getElementById("stat-word").innerHTML = startingLenght
-                document.getElementById("stat-correct").innerHTML = rightword
-                document.getElementById("stat-duration").innerHTML = `${duration}'`
-
-                if(falseword == 0)
-                    document.getElementById('statserror').innerHTML = 'PERFECT !!';
-                else
-                    document.getElementById('statserror').innerHTML = falseword;
-
-
-                // document.getElementById('wpmf').innerHTML = wpmfull
-                document.getElementById('wpm').innerHTML = wpm
-                finaldiv.style.display = 'block'
-
-            }else{
-                document.getElementById('chars-unit'+(index)).style.color = 'rgb(55, 91, 146)'
-            }
         }
-    }
-})
+    })
 
 callreload()
 function callreload(){
     reload(50);
 }
 
-document.getElementById('about').style.display = "block"
-document.getElementById('content').style.display = 'block';
+// document.getElementById('about').style.display = "block"
+// document.getElementById('content').style.display = 'block';
 
 // function openAbout(){
 //     document.getElementById('about').style.display = "block"
 //     console.log("startdqkfsdjfnksndf")
 // }
 
-var x = document.getElementById('about');
+// var x = document.getElementById('about');
 
-function showAbout(){
-    if (x.style.display == 'none') {
-        x.style.display = 'block'
-        document.getElementById('about').style.animation = 'OpenAbout .3s';
-        setTimeout(() => {
-            document.getElementById('content').style.display = 'block';
-            document.getElementById('content').style.animation = 'openContent 1s';
-        }, 600)
-    } else {
-        closeAbout()
-    }
-}
-function closeAbout(){
-    document.getElementById('content').style.animation = 'closeContent .6s';
-    setTimeout(() => {
-        document.getElementById('content').style.display = 'none';
-        setTimeout(() => {
-            document.getElementById('about').style.animation = 'CloseAbout .3s';
-            setTimeout(() => {
-                x.style.display = 'none';
-            }, 300)
-        }, 300)
-    }, 500)
-    input.select();
-}
-function link(){
-    setTimeout(() => {
-        window.open("https://stackoverflow.com/", "_blank");
-    }, 1100)
-}
+// function showAbout(){
+//     if (x.style.display == 'none') {
+//         x.style.display = 'block'
+//         document.getElementById('about').style.animation = 'OpenAbout .3s';
+//         setTimeout(() => {
+//             document.getElementById('content').style.display = 'block';
+//             document.getElementById('content').style.animation = 'openContent 1s';
+//           }, 600)
+//     } else {
+//         closeAbout()
+//     }
+// }
+// function closeAbout(){
+//     document.getElementById('content').style.animation = 'closeContent .6s';
+//     setTimeout(() => {
+//         document.getElementById('content').style.display = 'none';
+//         setTimeout(() => {
+//             document.getElementById('about').style.animation = 'CloseAbout .3s';
+//             setTimeout(() => {
+//                     x.style.display = 'none';
+//             }, 300)
+//         }, 300)
+//     }, 500)
+//     input.select();
+// }
+// function link(){
+//     setTimeout(() => {
+//         window.open("https://stackoverflow.com/", "_blank");
+//     }, 1100)
+// }
 
 document.addEventListener('keyup', event => {
     if (event.code === 'Equal') {

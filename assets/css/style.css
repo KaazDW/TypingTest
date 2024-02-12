@@ -1,0 +1,241 @@
+/* 
+---------------------------------
+    : KAAZDW
+---------------------------------
+*/
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&family=Syncopate:wght@400;700&display=swap");
+/*
+font-family: 'IBM Plex Mono', monospace;
+font-family: 'Syncopate', sans-serif;
+*/
+:root {
+  --color-body: rgb(21, 22, 26);
+  --color-bodybis: rgba(21, 22, 26, 0.692);
+  --color-element01: #444;
+  --color-blue: rgb(79, 117, 175);
+  --color-green: rgb(89, 208, 156);
+  --color-red: rgb(255, 138, 138);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+* a {
+  text-decoration: none;
+}
+* ul {
+  list-style: none;
+}
+
+body {
+  background-color: var(--color-body);
+  color: white;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-size: 19px;
+}
+body main {
+  width: 50vw;
+  margin: auto;
+  border-radius: 4px;
+  padding: 15px;
+  padding-top: 100px;
+}
+body main h2 {
+  margin: 10px 0;
+}
+body main div#stats {
+  margin-bottom: 15px;
+  display: flex;
+}
+body main div#stats div:nth-child(1) a {
+  margin-left: 0 5px;
+  font-size: 31px;
+}
+body main div#stats div:nth-child(1) {
+  border-left: 1px solid grey;
+  padding-left: 15px;
+}
+body main div#stats div:nth-child(1) p {
+  color: lightgrey;
+}
+body main div#stats div:nth-child(1) p span.title {
+  color: grey;
+}
+body main section.container div#textcontent p#quote {
+  font-size: 21px;
+}
+body main section.container div#field {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  width: 100%;
+}
+body main section.container div#field img {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--color-blue);
+  height: 30px;
+  transition: 0.2s;
+  margin-right: 30px;
+}
+body main section.container div#field img:hover {
+  cursor: pointer;
+  background-color: rgb(51, 86, 139);
+}
+body main section.container div#field input#textinput {
+  background-color: rgba(146, 13, 13, 0);
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 8px;
+  width: 90%;
+  font-size: 19px;
+  font-family: "IBM Plex Mono", monospace;
+  color: white;
+}
+body main section.container div#field input#textinput:focus {
+  outline: none;
+  border-bottom: 1px solid white;
+}
+body main section.container div#finalResult {
+  margin-top: 25px;
+}
+body main section.container div#finalResult div {
+  margin-top: 35px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+body main section.container div#finalResult div p.wpm span#wpm {
+  border: 3px solid var(--color-blue);
+  padding: 15px;
+  font-size: 25px;
+  border-radius: 5px;
+}
+body main section.container div#finalResult div ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+body main section.container div#finalResult div ul p {
+  text-align: right;
+}
+body main section.container div#finalResult div ul p span {
+  margin-right: 15px;
+}
+body main section.container div#finalResult div ul span#stat-correct {
+  color: var(--color-green);
+}
+body main section.container div#finalResult div ul span#statserror {
+  color: var(--color-red);
+}
+body main section.container div#finalResult div ul span#stat-duration {
+  color: var(--color-blue);
+}
+body main p.about {
+  text-align: right;
+  margin-top: 10px;
+  color: grey;
+  user-select: none;
+  cursor: pointer;
+}
+body main p.about a {
+  color: grey;
+}
+body main section#about {
+  user-select: none;
+  height: 99vh;
+  width: 99vw;
+  position: absolute;
+  background-color: var(--color-body);
+  backdrop-filter: blur(20px);
+  top: 0vh;
+  left: 0.5vw;
+  border-radius: 3px;
+}
+body main section#about div#content {
+  font-weight: 300;
+  padding-top: 200px;
+  padding-left: 50px;
+}
+body main section#about div#content h1 {
+  -webkit-text-stroke: 1px white;
+  color: rgba(255, 255, 255, 0);
+  font-family: "Syncopate", sans-serif;
+  font-size: 80px;
+}
+body main section#about div#content p {
+  color: grey;
+}
+body main section#about div#content p a {
+  color: white;
+  border-bottom: 1px solid var(--color-blue);
+  color: var(--color-blue);
+}
+body main section#about div#content div {
+  margin-top: 90px;
+  display: flex;
+  align-items: center;
+}
+body main section#about div#content div a {
+  background-color: var(--color-blue);
+  border-radius: 5px;
+  transition: 0.2s;
+}
+body main section#about div#content div a:hover {
+  background-color: rgb(51, 86, 139);
+  cursor: pointer;
+}
+body main section#about div#content div a.startingbutton {
+  padding: 12px 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 22px;
+}
+body main section#about div#content div a.link {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  padding: 7px;
+}
+body main section#about div#content div a.link img {
+  height: 40px;
+}
+
+@keyframes OpenAbout {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes CloseAbout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes openContent {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes closeContent {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

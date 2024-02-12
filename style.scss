@@ -15,6 +15,9 @@ font-family: 'Poppins', sans-serif;
     --color-blue: rgb(79, 117, 175);
     --color-green: rgb(89, 208, 156);
     --color-red: rgb(255, 138, 138);
+
+    --font-size1: 16px;
+    --font-size2: 19px;
 }
 
 *{
@@ -30,6 +33,11 @@ font-family: 'Poppins', sans-serif;
     padding: 7px 15px;
     border-radius: 7px;
     margin: 0 10px;
+    transition: .3s;
+    &:hover{
+        background-color: var(--color-text);
+        color: var(--color-primary);
+    }
 }
 header {
     display: flex;
@@ -44,11 +52,14 @@ header {
         font-size: 23px;
     }
     nav{
+        display: flex;
+        align-items: center;
         label {
-            padding: 10px 15px;
+            padding: 5px 15px;
             border-radius: 5px;
             transition: .2s;
             cursor: pointer;
+            font-size: var(--font-size1);
         }
         input[type="radio"] {
             display: none;
@@ -63,7 +74,7 @@ body{
     color: white;
     font-family: 'Kanit', sans-serif;
     font-weight: 500;
-    font-size: 19px;
+    font-size: var(--font-size2);
     main{
         width: 50vw;
         margin: auto;

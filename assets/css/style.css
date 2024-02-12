@@ -57,9 +57,11 @@ header h1 {
 header nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 header nav label {
   padding: 5px 15px;
+  margin: 0 3px;
   border-radius: 5px;
   transition: 0.2s;
   cursor: pointer;
@@ -70,6 +72,10 @@ header nav input[type=radio] {
 }
 header nav input[type=radio]:checked + label {
   background-color: var(--color-tertiary);
+}
+header nav span {
+  color: grey;
+  margin: 0 10px;
 }
 
 body {

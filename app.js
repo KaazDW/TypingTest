@@ -2,17 +2,28 @@
 const word = document.getElementById("textcontent")
 const input = document.getElementById("textinput")
 const field = document.getElementById("field")
+let timerInterval
+let indexLetterToTap
+let timerStart
+let wpmBase
+let wpmFinal
+let timerValue
+let trueWords
+let falseWords
+let wordRemaining
+let nbWordAtStart
+let playableWordList
 
 // Final result section display
 const resultSection = document.getElementById("finalResult")
 resultSection.style.display = 'none'
 
 // Random frequent Word-List by languages
-var frWordList = ["lui","ce","moins","bien","plus","cent","en","monsieur","devoir","vieux","un","deux","trois","quatre","cinq","six","sept","huit","neuf","dix","elle","votre","mais","voir","comme","pas","pays","coeur","mon","après","te","trois","son","même","plus","entre","tu","alors","ni","encore","noir","mot","mort","y","parler","bon","de","non","ou","passer","son","frère","terre","aussi","mer","vous","fille","en","amour","père","terre","penser","pouvoir","que","beau","air","ami","main","sur","mille","coeur","premier","ciel","trouver","nous","enfin","seul","tenir","amour","tant","se","quand","ton","à","penser","jamais","monde","mot","dont","yeux","none","encore","donc","ami","prendre","mordre","manger","dire","doit","boire","outil","éteint","mari","chercher","ou","depuis","alors","prendre","ville","parce","que","ciel","voix","voir","grand"];
-var enWordList = ["him","this","less","well","more","hundred","in","sir","duty","old","one","two","three","four","five","six","seven","eight","nine","ten","she","your","but","see","as","not","country","heart","my","after","you","three","his","same","more","between","you","then","neither","again","black","word","death","there","speak","good","of","no","or","to pass","its","brother","earth","also","sea","you","daughter","in","love","father","earth","think","power","that","beautiful","air","friend","hand","on","thousand","heart","first","sky","find","we","finally","alone","to hold","love","so much","to be","when","your","to","think","never","world","word","whose","eyes","none","again","so","friend","to take","bite","to eat","to say","must","to drink","tool","off","husband","to look for","or","since","then","to take","city","because","that","sky","voice","see","big"];
+let frWordList = ["lui","ce","moins","bien","plus","cent","en","monsieur","devoir","vieux","un","deux","trois","quatre","cinq","six","sept","huit","neuf","dix","elle","votre","mais","voir","comme","pas","pays","coeur","mon","après","te","trois","son","même","plus","entre","tu","alors","ni","encore","noir","mot","mort","y","parler","bon","de","non","ou","passer","son","frère","terre","aussi","mer","vous","fille","en","amour","père","terre","penser","pouvoir","que","beau","air","ami","main","sur","mille","coeur","premier","ciel","trouver","nous","enfin","seul","tenir","amour","tant","se","quand","ton","à","penser","jamais","monde","mot","dont","yeux","none","encore","donc","ami","prendre","mordre","manger","dire","doit","boire","outil","éteint","mari","chercher","ou","depuis","alors","prendre","ville","parce","que","ciel","voix","voir","grand"];
+let enWordList = ["him","this","less","well","more","hundred","in","sir","duty","old","one","two","three","four","five","six","seven","eight","nine","ten","she","your","but","see","as","not","country","heart","my","after","you","three","his","same","more","between","you","then","neither","again","black","word","death","there","speak","good","of","no","or","to pass","its","brother","earth","also","sea","you","daughter","in","love","father","earth","think","power","that","beautiful","air","friend","hand","on","thousand","heart","first","sky","find","we","finally","alone","to hold","love","so much","to be","when","your","to","think","never","world","word","whose","eyes","none","again","so","friend","to take","bite","to eat","to say","must","to drink","tool","off","husband","to look for","or","since","then","to take","city","because","that","sky","voice","see","big"];
 
 // Default language and display
-var usedWordList = frWordList;
+let usedWordList = frWordList;
 document.addEventListener('DOMContentLoaded', function(){
     loadSettings();
 });
@@ -49,19 +60,6 @@ function loadSettings(){
         reload(50);
     }
 }
-
-// Global variables initialization
-let timerInterval
-let indexLetterToTap
-let timerStart
-let wpmBase
-let wpmFinal
-let timerValue
-let trueWords
-let falseWords
-let wordRemaining
-let nbWordAtStart
-let playableWordList
 
 // Fonction use to reload the game with the number of words to type
 function reload(nbWord){
@@ -101,6 +99,9 @@ function reload(nbWord){
     }
     document.getElementById('quote').innerHTML += tabledisplayed.join(" ")
 
+    // Color the first word to type
+    document.getElementById('chars-unit0').style.color = 'rgb(55, 91, 146)'
+
     // Init variables with the playableWordList content
     nbWordAtStart = playableWordList.length
     wordRemaining = nbWordAtStart
@@ -110,6 +111,9 @@ function reload(nbWord){
 // event listener for the input field
 document.addEventListener('keyup', event => {
     if (event.code === 'Space' || event.code === 'Enter') {
+        if(input.value === "" || input.value === " "){
+            return 0;
+        }
 
         // Start Timer
         if(timerStart === false){

@@ -99,41 +99,48 @@ body{
         section.container{
             div#textcontent{
                 width: 600px;
-                font-weight: 800;
                 margin: auto auto;
                 p#quote{
                     font-size: 22px;
                 }
             }
-            div#stats{
-                text-align: center;
-                font-size: 25px;
-                display: flex;
-                margin-top: 20px;
-                p{
-                    display: flex;
-
-                }
-            }
-            div#field{
-                margin-top: 15px;
-                width: 100%;
-                input#textinput{
-                    font-size: 25px;
-                    color: white;
-                    display: flex;
-                    align-items: center;
-                    background-color: var(--color-secondary);
-                    padding: 15px;
+            .input-field{
+                margin-top: 35px;
+                color: #555;
+                div#stats{
+                    font-size: 21px;
                     width: 600px;
-                    font-weight: 800;
-                    margin: auto auto;
-                    border: 2px solid var(--color-secondary);
-                    border-radius: 15px;
+                    margin: 20px auto auto ;
+                    p{
+                        display: inline;
+                    }
+                    #remaining{
+                        color: #777;
+                    }
+                    #statstime{
+                        margin-left: 10px;
+                    }
                 }
-                input#textinput:focus{
-                    outline: none;
-                    //border: 2px solid #333;
+                div#field{
+                    margin-top: 5px;
+                    width: 100%;
+                    input#textinput{
+                        font-size: 25px;
+                        color: white;
+                        display: flex;
+                        align-items: center;
+                        background-color: var(--color-secondary);
+                        padding: 15px;
+                        font-weight: 800;
+                        width: 600px;
+                        margin: auto auto;
+                        border: 2px solid var(--color-secondary);
+                        border-radius: 15px;
+                    }
+                    input#textinput:focus{
+                        outline: none;
+                        //border: 2px solid #333;
+                    }
                 }
             }
             div#finalResult{

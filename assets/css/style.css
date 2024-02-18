@@ -96,39 +96,47 @@ body main h2 {
 }
 body main section.container div#textcontent {
   width: 600px;
-  font-weight: 800;
   margin: auto auto;
 }
 body main section.container div#textcontent p#quote {
   font-size: 22px;
 }
-body main section.container div#stats {
-  text-align: center;
-  font-size: 25px;
-  display: flex;
-  margin-top: 20px;
+body main section.container .input-field {
+  margin-top: 35px;
+  color: #555;
 }
-body main section.container div#stats p {
-  display: flex;
+body main section.container .input-field div#stats {
+  font-size: 21px;
+  width: 600px;
+  margin: 20px auto auto;
 }
-body main section.container div#field {
-  margin-top: 15px;
+body main section.container .input-field div#stats p {
+  display: inline;
+}
+body main section.container .input-field div#stats #remaining {
+  color: #777;
+}
+body main section.container .input-field div#stats #statstime {
+  margin-left: 10px;
+}
+body main section.container .input-field div#field {
+  margin-top: 5px;
   width: 100%;
 }
-body main section.container div#field input#textinput {
+body main section.container .input-field div#field input#textinput {
   font-size: 25px;
   color: white;
   display: flex;
   align-items: center;
   background-color: var(--color-secondary);
   padding: 15px;
-  width: 600px;
   font-weight: 800;
+  width: 600px;
   margin: auto auto;
   border: 2px solid var(--color-secondary);
   border-radius: 15px;
 }
-body main section.container div#field input#textinput:focus {
+body main section.container .input-field div#field input#textinput:focus {
   outline: none;
 }
 body main section.container div#finalResult {

@@ -21,6 +21,7 @@ resultSection.style.display = 'none'
 // Random frequent Word-List by languages
 let frWordList = ["lui","ce","moins","bien","plus","cent","en","monsieur","devoir","vieux","un","deux","trois","quatre","cinq","six","sept","huit","neuf","dix","elle","votre","mais","voir","comme","pas","pays","coeur","mon","après","te","trois","son","même","plus","entre","tu","alors","ni","encore","noir","mot","mort","y","parler","bon","de","non","ou","passer","son","frère","terre","aussi","mer","vous","fille","en","amour","père","terre","penser","pouvoir","que","beau","air","ami","main","sur","mille","coeur","premier","ciel","trouver","nous","enfin","seul","tenir","amour","tant","se","quand","ton","à","penser","jamais","monde","mot","dont","yeux","none","encore","donc","ami","prendre","mordre","manger","dire","doit","boire","outil","éteint","mari","chercher","ou","depuis","alors","prendre","ville","parce","que","ciel","voix","voir","grand"];
 let enWordList = ["him","this","less","well","more","hundred","in","sir","duty","old","one","two","three","four","five","six","seven","eight","nine","ten","she","your","but","see","as","not","country","heart","my","after","you","three","his","same","more","between","you","then","neither","again","black","word","death","there","speak","good","of","no","or","to pass","its","brother","earth","also","sea","you","daughter","in","love","father","earth","think","power","that","beautiful","air","friend","hand","on","thousand","heart","first","sky","find","we","finally","alone","to hold","love","so much","to be","when","your","to","think","never","world","word","whose","eyes","none","again","so","friend","to take","bite","to eat","to say","must","to drink","tool","off","husband","to look for","or","since","then","to take","city","because","that","sky","voice","see","big"];
+let letterWordList = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
 // Default language and display
 let usedWordList = frWordList;
@@ -47,6 +48,9 @@ function loadSettings(){
         } else if (radio.value === 'en' && radio.checked) {
             usedWordList = enWordList;
             result.push('en');
+        // } else if (radio.value === 'letter' && radio.checked) {
+        //     usedWordList = letterWordList;
+        //     result.push('letter');
         } else if (radio.value === 'twenty' && radio.checked) {
             result.push('twenty');
         } else if (radio.value === 'fifty' && radio.checked) {
@@ -192,7 +196,10 @@ document.addEventListener('keyup', event => {
 
 // Shortcuts definitions
 document.addEventListener('keyup', event => {
-    if (event.code === 'Equal') {
+    if (event.code === 'Backquote' || event.code === 'ControlRight') {
         loadSettings()
+    }
+    if (event.code === 'Space') {
+        input.focus()
     }
 });

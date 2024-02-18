@@ -15,6 +15,8 @@
             <label for="fr">fr</label>
             <input type="radio" id="en" name="language" value="en">
             <label for="en">en</label>
+<!--            <input type="radio" id="let" name="language" value="letter">-->
+<!--            <label for="let">letter</label>-->
             <span>|</span>
             <input type="radio" id="twenty" name="mode" value="twenty" >
             <label for="twenty">20</label>
@@ -23,23 +25,22 @@
 <!--            <input type="radio" id="infinit" name="mode" value="infinit">-->
 <!--            <label for="infinit">Infinit</label>-->
 
-            <button class="button">button</button>
+            <button class="button">See shortcuts</button>
         </nav>
     </header>
     <main>
-        <div id="stats">
-            <div>
-                <p><span class="title">Durée : </span><span id="statstime">0</span>'</p>
-                <p><span class="title">Restants : </span><span id="remaining">0</span> mots</p>
-            </div>
-        </div>
+
         <section class="container">
             <div id="textcontent">
                 <p id="quote">
                 </p>
             </div>
+            <div id="stats">
+                <p><span id="remaining">0</span> mots</p>
+                <p><span id="statstime">0</span>'</p>
+            </div>
             <div id="field">
-                <input id="textinput" autocomplete="off" placeholder="Type space after writing the first word to start"></input>
+                <input id="textinput" autocomplete="off">
             </div>
             <div id='finalResult'>
                 <h2>FINAL RESULT</h2>

@@ -1,0 +1,15 @@
+{
+  "name": "keyspeed",
+  "version": "1.0.0",
+  "description": "<div align=center>\r   <img src=\"https://github.com/KaazDW/TypingTest/blob/main/assets/screenshot.png\">\r </div>",
+  "main": "public/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

@@ -140,7 +140,8 @@ body main section.container .input-field div#field input#textinput:focus {
   outline: none;
 }
 body main section.container div#finalResult {
-  margin-top: 25px;
+  width: 600px;
+  margin: 90px auto;
 }
 body main section.container div#finalResult div {
   margin-top: 35px;

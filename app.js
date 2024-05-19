@@ -55,8 +55,6 @@ function loadSettings(){
             result.push('twenty');
         } else if (radio.value === 'fifty' && radio.checked) {
             result.push('fifty');
-        } else if (radio.value === 'hundred' && radio.checked) {
-            result.push('hundred');
         }
     });
 
@@ -64,8 +62,6 @@ function loadSettings(){
         reload(5);
     } else if (result.includes('fifty')) {
         reload(50);
-    } else if (result.includes('hundred')) {
-        reload(100);
     }
 }
 
@@ -108,7 +104,7 @@ function reload(nbWord){
     document.getElementById('quote').innerHTML += tabledisplayed.join(" ")
 
     // Color the first word to type
-    document.getElementById('chars-unit0').style.color = 'rgb(87,160,255)'
+    document.getElementById('chars-unit0').style.color = 'rgb(55, 91, 146)'
 
     // Init variables with the playableWordList content
     nbWordAtStart = playableWordList.length
@@ -174,10 +170,6 @@ document.addEventListener('keyup', event => {
                 wpmBase = (trueWords * 60) / duration
                 wpmFinal = wpmBase.toFixed(3);
 
-                // WPM calcul if no wrong words
-                let ifZeroWrong = ((nbWordAtStart *60) / duration).toFixed(3);
-                // TODO: display ifZeroWrong at result section
-
                 // Update finale result section
                 document.getElementById("stat-word").innerHTML = nbWordAtStart
                 document.getElementById("stat-correct").innerHTML = trueWords
@@ -194,9 +186,9 @@ document.addEventListener('keyup', event => {
                 resultSection.style.display = 'block'
 
             }else{
-                // If all words are typed yet
+                // If all words are not typed yet
                 // Color the next word to type in blue
-                document.getElementById('chars-unit'+(indexLetterToTap)).style.color = 'rgb(87,160,255)'
+                document.getElementById('chars-unit'+(indexLetterToTap)).style.color = 'rgb(55, 91, 146)'
             }
         }
     }
